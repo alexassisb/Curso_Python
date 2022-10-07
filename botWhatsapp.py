@@ -15,8 +15,7 @@ mensagem = 'Teste automação Python'
 
 
 def buscar_contato(contato):
-    campo_pesquisa = driver.find_element_by_xpath(
-        '//div[contains(@class,"copyable-text selectable-text")]')
+    campo_pesquisa = driver.find_element(By.CLASS_NAME, 'copyable-text selectable-text')
     time.sleep(3)
     campo_pesquisa.click()
     campo_pesquisa.send_keys(contato)
@@ -24,7 +23,7 @@ def buscar_contato(contato):
 
 
 def enviar_mensagem(mensagem):
-    campo_mensagem = driver.find_elements_by_xpath(
+    campo_mensagem = driver.find_elements(By.XPATH,
         '//div[contains(@class,"selectable-text copyable-text")]')
     campo_mensagem[1].click()
     time.sleep(3)
